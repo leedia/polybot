@@ -1,0 +1,24 @@
+{
+  "name": "polybot",
+  "version": "1.0.0",
+  "description": "A modular google+ hangouts bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "bot",
+    "hangouts"
+  ],
+  "author": "a9io",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "events": "^1.0.2",
+    "fs": "0.0.2",
+    "hangupsjs": "^0.9.1",
+    "mathjs": "^1.7.0",
+    "q": "^1.4.1",
+    "request": "^2.58.0"
+  }
+}
