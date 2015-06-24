@@ -1,6 +1,6 @@
 #Polybot
 
-![polybot banner](banner.png =500x)
+![polybot banner](banner.png)
 
 a work-in-progress hangouts bot written with [hangupsjs](https://github.com/tdryer/hangups), with a focus on variety of modules and ease of use.
 
