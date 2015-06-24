@@ -13,7 +13,8 @@ Command | Function
 ------------ | -------------
 *(`jpg`/`png` hotlink)* | an inline version of the linked image
 `.yt *` | a youtube link from the `*` search query
-`.t *` | a phrase (`*`) google translated to english
+`.t *` | a phrase (`*`) google translated to english (buggy)
+`.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
