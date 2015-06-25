@@ -14,9 +14,10 @@ Command | Function
 *(`jpg`/`png` hotlink)* | an inline version of the linked image
 *(`tweet` link)* | an inline tweet including username and tweet text
 `.yt *` | a youtube link from the `*` search query
-`.t *` | a phrase (`*`) google translated to english (buggy)
+`.t *` | a phrase (`*`) google translated to english
 `.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
+`.ascii *` | show `*` ascii emote
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
 `.leave` | exits the (group) chat.
