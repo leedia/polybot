@@ -10,8 +10,8 @@ exports.Client = Client;
 var chat = new events.EventEmitter();
 exports.chat = chat;
 
-fs.readdirSync(__dirname + "/chat_modules").forEach(function(file){
-  if(file.slice(-2) == "js") require("./chat_modules/" + file);
+fs.readdirSync(__dirname + "/chat_modules").forEach(function(file) {
+	if (file.slice(-2) == "js") require("./chat_modules/" + file);
 });
 
 var creds = function() {
@@ -29,7 +29,7 @@ var reconnect = function() {
 client.on('chat_message', function(ev) {
 	if (ev.chat_message.message_content.segment !== null &&
 		ev.self_event_state.user_id.gaia_id != ev.sender_id.gaia_id) {
-      chat.emit("message", ev, ev.chat_message.message_content.segment[0].text);
+		chat.emit("message", ev, ev.chat_message.message_content.segment[0].text);
 	}
 });
 

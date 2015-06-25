@@ -10,7 +10,7 @@ exports.replyMessage = function(trig, body) {
 
 exports.replySegments = function(trig, segments) {
 	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
-		
+
 	});
 };
 
