@@ -34,11 +34,11 @@ String.prototype.hashCode = function() {
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.8 (.+)/);
 	if (match !== null) {
-		client.startTyping();
+		client.startTyping(ev);
 		var question = (Math.abs(match[1].hashCode()) % 2 === 0);
 		var rand = Math.round(Math.random() * 5);
 		if (question) client.replyMessage(ev, decisions.yes[rand]);
 		else client.replyMessage(ev, decisions.no[rand]);
-		client.stopTyping();
+		client.stopTyping(ev);
 	}
 });
