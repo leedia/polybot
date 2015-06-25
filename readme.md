@@ -11,12 +11,14 @@ Uses `chat_modules` to interact with an abstraction of the hangupsjs api. Events
 ##Functions
 Command | Function
 ------------ | -------------
-*(`jpg`/`png` hotlink)* | an inline version of the linked image
+*(`jpe?g`/`png`/`gif` hotlink)* | an inline version of the linked image
 *(`tweet` link)* | an inline tweet including username and tweet text
 `.yt *` | a youtube link from the `*` search query
 `.t *` | a phrase (`*`) google translated to english
 `.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
+`.dict *` | an oxford dictionary definition for `*`
+`.ud *` | an urban dictionary definition for `*`
 `.ascii *` | show `*` ascii emote
 `.rainbow` | make the chat rainbow color
 `.8 *` | makes an 8 ball decision based on the `*` question
