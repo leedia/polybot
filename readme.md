@@ -12,6 +12,7 @@ Uses `chat_modules` to interact with an abstraction of the hangupsjs api. Events
 Command | Function
 ------------ | -------------
 *(`jpg`/`png` hotlink)* | an inline version of the linked image
+*(`tweet` link)* | an inline tweet including username and tweet text
 `.yt *` | a youtube link from the `*` search query
 `.t *` | a phrase (`*`) google translated to english (buggy)
 `.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
