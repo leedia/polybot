@@ -32,6 +32,14 @@ exports.leaveChat = function(ev) {
 	client.removeuser(ev.conversation_id.id);
 };
 
+exports.renameChat = function(ev, name){
+	client.renameconversation(ev.conversation_id.id, name);
+};
+
+exports.eggChat = function(ev, egg){
+	client.sendeasteregg(ev.conversation_id.id, egg);
+};
+
 exports.startTyping = function(ev) {
 	client.settyping(ev.conversation_id.id, Client.TypingStatus.TYPING);
 };
