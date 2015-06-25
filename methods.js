@@ -8,18 +8,23 @@ exports.replyMessage = function(trig, body) {
 	]).then(function() {});
 };
 
+exports.replySegments = function(trig, segments) {
+	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
+		
+	});
+};
+
 exports.replyLink = function(trig, link) {
 	var linkbuilder = new Client.MessageBuilder();
-	var segments = linkbuilder.link(link, link);
-	segments = segments.toSegments();
+	var segments = linkbuilder.link(link, link).toSegments();
 	client.sendchatmessage(trig.conversation_id.id, segments);
 };
 
 exports.replyImage = function(trig, path, fn) {
 	client.uploadimage(path).then(function(id) {
 		client.sendchatmessage(trig.conversation_id.id, [], id).then(function() {
-      fn();
-    });
+			fn();
+		});
 	});
 };
 
@@ -36,3 +41,4 @@ exports.stopTyping = function(ev) {
 };
 
 exports.client = client;
+exports.Client = Client;
