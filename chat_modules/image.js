@@ -22,17 +22,25 @@ String.prototype.hashCode = function() {
 };
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/(https?:\/\/.*\.(?:png|jpe?g))/i);
+	var match = msg.match(/(https?:\/\/.*\.(?:png|jpe?g|gif(?!v)))/i);
 	if (match !== null) {
 		client.startTyping(ev);
 		var hash = match[0].slice(0, -4).hashCode() + match[0].slice(-4);
 		download(match[0], "cache/" + hash, function() {
-			client.replyImage(ev, "cache/" + hash, function() {
+			var size = fs.statSync("cache/" + hash).size;
+			if (size < 20 * 1000000) {
+				client.replyImage(ev, "cache/" + hash, function() {
+					fs.unlink("cache/" + hash, function(err) {
+						if (err) throw err;
+						client.stopTyping(ev);
+					});
+				});
+			} else {
 				fs.unlink("cache/" + hash, function(err) {
 					if (err) throw err;
 					client.stopTyping(ev);
 				});
-			});
+			}
 		});
 	}
 });
