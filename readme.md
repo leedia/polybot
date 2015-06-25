@@ -19,6 +19,7 @@ Command | Function
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
 `.ascii *` | show `*` ascii emote
 `.rainbow` | make the chat rainbow color
+`.8 *` | makes an 8 ball decision based on the `*` question
 `.rename *` | renames the current chat to `*`
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
