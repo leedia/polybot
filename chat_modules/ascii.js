@@ -9,15 +9,14 @@ var ascii = {
 	dongerhood: "༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽YOU CAME TO THE WRONG DONGERHOOD༼ ºل͟º༼ ºل͟º༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽",
 	gibe: "༼ つ ◕_◕ ༽つ",
 	disapproval: "ಠ_ಠ",
-	downeat: ":∩"
+	downeat: ":∩",
+	tableflip: "(╯°□°)╯︵ ┻━┻"
 };
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.ascii (.+)/);
 	if (match !== null) {
-		client.startTyping(ev);
 		var art = match[1];
 		if(ascii[art] !== undefined) client.replyMessage(ev, ascii[art]);
-		client.stopTyping(ev);
 	}
 });
