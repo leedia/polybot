@@ -25,4 +25,5 @@ Command | Function
 `.rename *` | renames the current chat to `*`
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
+`.ref` | links to this page
 `.leave` | exits the (group) chat.

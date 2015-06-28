@@ -8,11 +8,12 @@ exports.client = client;
 exports.Client = Client;
 
 var chat = new events.EventEmitter();
-chat.setMaxListeners(20);
 exports.chat = chat;
-
-fs.readdirSync(__dirname + "/chat_modules").forEach(function(file) {
+var n = 0;
+fs.readdirSync(__dirname + "/chat_modules").forEach(function(file, index, arr) {
 	if (file.slice(-2) == "js") require("./chat_modules/" + file);
+	n++;
+	if(index == arr.length-1) chat.setMaxListeners(n);
 });
 
 var creds = function() {
