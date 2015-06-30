@@ -9,6 +9,13 @@ var download = function(uri, filename, callback) {
 	});
 };
 
+var deleteFile = function(path){
+	fs.unlink("cache/" + hash, function(err) {
+		if (err) throw err;
+		client.stopTyping(ev);
+	});
+};
+
 String.prototype.hashCode = function() {
 	var hash = 0,
 		i, chr, len;
@@ -30,16 +37,10 @@ client.chat.on("message", function(ev, msg) {
 			var size = fs.statSync("cache/" + hash).size;
 			if (size < 20 * 1000000) {
 				client.replyImage(ev, "cache/" + hash, function() {
-					fs.unlink("cache/" + hash, function(err) {
-						if (err) throw err;
-						client.stopTyping(ev);
-					});
+					deleteFile("cache/" + hash);
 				});
 			} else {
-				fs.unlink("cache/" + hash, function(err) {
-					if (err) throw err;
-					client.stopTyping(ev);
-				});
+				deleteFile("cache/" + hash);
 			}
 		});
 	}
