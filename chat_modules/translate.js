@@ -4,7 +4,7 @@ var cheerio = require("cheerio");
 
 
 client.chat.on("message", function(ev, msg) {
-	if (msg.indexOf(".t") === 0 && msg.length > 3) {
+	if (msg.indexOf(".t ") === 0 && msg.length > 3) {
 		client.startTyping(ev);
 		var query = msg.substring(3);
 		request.encoding = "UTF-8";
