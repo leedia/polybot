@@ -9,8 +9,8 @@ var download = function(uri, filename, callback) {
 	});
 };
 
-var deleteFile = function(path){
-	fs.unlink("cache/" + hash, function(err) {
+var deleteFile = function(path) {
+	fs.unlink(path, function(err) {
 		if (err) throw err;
 		client.stopTyping(ev);
 	});
