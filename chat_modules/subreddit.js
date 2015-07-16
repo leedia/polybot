@@ -14,6 +14,7 @@ client.chat.on("message", function(ev, msg) {
 				var description = $("title").text();
 				var linkbuilder = new client.Client.MessageBuilder();
 				var segments = linkbuilder.link("/r/" + sub + " - " + description, "https://reddit.com/r/" + sub).toSegments();
+				client.replySegments(ev, segments);
 			} else {
 				client.replyMessage(ev, "error");
 			}
