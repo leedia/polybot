@@ -11,9 +11,11 @@ client.chat.on("message", function(ev, msg) {
 		request("https://reddit.com/r/" + sub, function(error, response, body) {
 			if (!error) {
 				var $ = cheerio.load(body);
-				var description = $("title").text();
+				var subdescription = $("title").text();
+				var points = "";
+				if(sub.match("comments")) points = $(".linkinfo .score").text();
 				var linkbuilder = new client.Client.MessageBuilder();
-				var segments = linkbuilder.link("/r/" + sub + " - " + description, "https://reddit.com/r/" + sub).toSegments();
+				var segments = linkbuilder.link("/r/" + sub, "https://reddit.com/r/" + sub).text(" - " + subdescription).bold(points).toSegments();
 				client.replySegments(ev, segments);
 			} else {
 				client.replyMessage(ev, "error");
