@@ -21,6 +21,7 @@ Command | Function
 `.dict *` | an oxford dictionary definition for `*`
 `.ud *` | an urban dictionary definition for `*`
 `.ascii *` | show `*` ascii emote
+`.s *` | send a sticker matching `*` as the title
 `.rainbow` | make the chat rainbow color
 `.8 *` | makes an 8 ball decision based on the `*` question
 `.rename *` | renames the current chat to `*`
