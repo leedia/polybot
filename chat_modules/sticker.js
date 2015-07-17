@@ -23,7 +23,7 @@ String.prototype.hashCode = function() {
 	for (i = 0, len = this.length; i < len; i++) {
 		chr = this.charCodeAt(i);
 		hash = ((hash << 5) - hash) + chr;
-		hash |= 0; // Convert to 32bit integer
+		hash |= 0;
 	}
 	return hash;
 };
@@ -34,21 +34,22 @@ var stickers = {
 	"totoro": "https://33.media.tumblr.com/b080d76a89a35cc237eaa0e818f5e871/tumblr_mtymcgKuha1sjro9ko1_500.gif",
 	"doot": "http://media.giphy.com/media/p7PU6lbV4Rq3C/giphy.gif",
 	"elf": "https://33.media.tumblr.com/tumblr_namirtXRfE1rjk6q4o1_1408583536_cover.jpg",
-	"kappa": "https://static-cdn.jtvnw.net/emoticons/v1/25/1.0",
-	"wutface": "https://static-cdn.jtvnw.net/emoticons/v1/28087/1.0",
-	"biblethump": "https://static-cdn.jtvnw.net/emoticons/v1/86/1.0",
-	"babyrage": "https://static-cdn.jtvnw.net/emoticons/v1/22639/1.0",
-	"pjsalt": "https://static-cdn.jtvnw.net/emoticons/v1/36/1.0",
-	"kreygasm": "https://static-cdn.jtvnw.net/emoticons/v1/41/1.0",
-	"pogchamp": "https://static-cdn.jtvnw.net/emoticons/v1/88/1.0",
-	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0"
+	"kappa": "https://static-cdn.jtvnw.net/emoticons/v1/25/1.0/index.jpg",
+	"wutface": "https://static-cdn.jtvnw.net/emoticons/v1/28087/1.0/index.jpg",
+	"biblethump": "https://static-cdn.jtvnw.net/emoticons/v1/86/1.0/index.jpg",
+	"babyrage": "https://static-cdn.jtvnw.net/emoticons/v1/22639/1.0/index.jpg",
+	"pjsalt": "https://static-cdn.jtvnw.net/emoticons/v1/36/1.0/index.jpg",
+	"kreygasm": "https://static-cdn.jtvnw.net/emoticons/v1/41/1.0/index.jpg",
+	"pogchamp": "https://static-cdn.jtvnw.net/emoticons/v1/88/1.0/index.jpg",
+	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0/index.jpg"
 };
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.s (.+)/);
-	if (match !== null && stickers[match[1]]) {
+	var sticker;
+	if(match) sticker = stickers[match[1].toLowerCase()];
+	if (match && sticker) {
 		client.startTyping(ev);
-		var sticker = stickers[match[1].toLowerCase()];
 		var hash = sticker.slice(0, -4).hashCode() + sticker.slice(-4);
 		download(sticker, "cache/" + hash, function() {
 			var size = fs.statSync("cache/" + hash).size;
