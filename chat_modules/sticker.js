@@ -34,7 +34,10 @@ var stickers = {
 	"catbus": "http://media3.giphy.com/media/qhuFHjIDMYrfO/giphy.gif",
 	"totoro": "https://33.media.tumblr.com/b080d76a89a35cc237eaa0e818f5e871/tumblr_mtymcgKuha1sjro9ko1_500.gif",
 	"doot": "http://media.giphy.com/media/p7PU6lbV4Rq3C/giphy.gif",
-	"gnome": "https://33.media.tumblr.com/tumblr_namirtXRfE1rjk6q4o1_1408583536_cover.jpg"
+	"elf": "https://33.media.tumblr.com/tumblr_namirtXRfE1rjk6q4o1_1408583536_cover.jpg",
+	"kreygasm": "https://static-cdn.jtvnw.net/emoticons/v1/41/1.0/index.jpg",
+	"pogchamp": "https://static-cdn.jtvnw.net/emoticons/v1/88/1.0/index.jpg",
+	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0/index.jpg"
 };
 
 client.chat.on("message", function(ev, msg) {
