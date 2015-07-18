@@ -8,7 +8,8 @@ client.chat.on("message", function(ev, msg) {
 		client.getHistory(ev, lim, function(ret) {
 			var words = {};
 			ret.conversation_state.event.forEach(function(evt, ind) {
-				if (evt.chat_message && evt.chat_message.message_content.segment.length > 0) {
+				if (evt.chat_message && evt.chat_message.message_content.segment.length > 0 &&
+				ev.self_event_state.user_id.gaia_id != evt.sender_id.gaia_id) {
 					var message = evt.chat_message.message_content.segment[0].text.split(" ");
 					message.forEach(function(word) {
 						if (words[word.toLowerCase()]) {
