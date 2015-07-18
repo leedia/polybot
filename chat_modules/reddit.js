@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/r\/(.+)/);
-	if (match !== null && !(match[1].match(/http/) && !match[1].match(/reddit/))) {
+	if (match !== null && !(match[1].match("http") && !match[1].match("reddit"))) {
 		client.startTyping(ev);
 		var sub = match[1];
 		request("https://reddit.com/r/" + sub, function(error, response, body) {
