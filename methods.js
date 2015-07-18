@@ -9,9 +9,7 @@ exports.replyMessage = function(trig, body) {
 };
 
 exports.replySegments = function(trig, segments) {
-	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
-
-	});
+	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {});
 };
 
 exports.replyLink = function(trig, link) {
@@ -32,11 +30,15 @@ exports.leaveChat = function(ev) {
 	client.removeuser(ev.conversation_id.id);
 };
 
-exports.renameChat = function(ev, name){
+exports.getHistory = function(ev, length, fn) {
+	client.getconversation(ev.conversation_id.id, new Date(), length).then(fn);
+};
+
+exports.renameChat = function(ev, name) {
 	client.renameconversation(ev.conversation_id.id, name);
 };
 
-exports.eggChat = function(ev, egg){
+exports.eggChat = function(ev, egg) {
 	client.sendeasteregg(ev.conversation_id.id, egg);
 };
 
