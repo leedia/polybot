@@ -4,6 +4,7 @@ var lim = 10000;
 client.chat.on("message", function(ev, msg) {
 	if (msg == ".topwords") {
 		client.replyMessage(ev, "Reading chat up to " + lim + " messages...");
+		client.startTyping();
 		client.getHistory(ev, lim, function(ret) {
 			var words = {};
 			ret.conversation_state.event.forEach(function(evt, ind) {
@@ -38,6 +39,7 @@ client.chat.on("message", function(ev, msg) {
 			}
 			segments.toSegments();
 			client.replySegments(ev, segments.segments);
+			client.stopTyping();
 		});
 	}
 });
