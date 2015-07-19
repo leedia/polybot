@@ -14,7 +14,7 @@ client.chat.on("message", function(ev, msg) {
 					message.forEach(function(word) {
 						if (words[word.toLowerCase()]) {
 							words[word]++;
-						} else if (word.charAt(0) != "." && word !== "") words[word.toLowerCase()] = 1;
+						} else if (word.charAt(0) != "." && word !== "" && word.length > 4) words[word.toLowerCase()] = 1;
 					});
 				}
 			});
