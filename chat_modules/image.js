@@ -12,7 +12,6 @@ var download = function(uri, filename, callback) {
 var deleteFile = function(path) {
 	fs.unlink(path, function(err) {
 		if (err) throw err;
-		client.stopTyping(ev);
 	});
 };
 
@@ -42,6 +41,7 @@ client.chat.on("message", function(ev, msg) {
 			} else {
 				deleteFile("cache/" + hash);
 			}
+			client.stopTyping(ev);
 		});
 	}
 });
