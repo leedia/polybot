@@ -23,6 +23,8 @@ Command | Function
 `.ascii *` | show `*` ascii emote
 `.s *` | send a sticker matching `*` as the title
 `.rainbow` | make the chat rainbow color
+`.celebration` | a party that simply cannot be stopped once started
+`.zalgo *` | responds with a zalgolized version of `*`
 `.8 *` | makes an 8 ball decision based on the `*` question
 `.rename *` | renames the current chat to `*`
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
