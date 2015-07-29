@@ -11,7 +11,7 @@ client.chat.on("message", function(ev, msg) {
 			if (!error) {
 				var $ = cheerio.load(body);
 				var username = $(".permalink-tweet .username").text();
-				var tweet = $(".tweet-text").first().text();
+				var tweet = $("permalink-tweet .tweet-text").text();
 				var builder = new client.Client.MessageBuilder();
 				var segments = builder.bold(username + ": ").text(tweet).toSegments();
 				client.replySegments(ev, segments);
