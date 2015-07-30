@@ -40,7 +40,8 @@ var stickers = {
 	"pjsalt": "https://static-cdn.jtvnw.net/emoticons/v1/36/1.0/index.jpg",
 	"kreygasm": "https://static-cdn.jtvnw.net/emoticons/v1/41/1.0/index.jpg",
 	"pogchamp": "https://static-cdn.jtvnw.net/emoticons/v1/88/1.0/index.jpg",
-	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0/index.jpg"
+	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0/index.jpg",
+	"ooer": "http://www.operationworld.org/files/ow/maps/lgmap/oman-MMAP-md.png"
 };
 
 client.chat.on("message", function(ev, msg) {
