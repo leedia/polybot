@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/https?:\/\/twitter\.com\/(.+)\/status\/(.+)/);
-	if (match !== null) {
+	if (match ) {
 		client.startTyping(ev);
 		request(msg, function(error, response, body) {
 			if (!error) {

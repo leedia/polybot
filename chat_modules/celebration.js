@@ -7,7 +7,7 @@ var duration = 120;
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.celebration/);
-	if (match !== null) {
+	if (match ) {
 		var changeColor = function(i) {
 			client.eggChat(ev, "bikeshed");
 			setTimeout(function() {

@@ -27,7 +27,7 @@ var reconnect = function() {
 };
 
 client.on('chat_message', function(ev) {
-	if (ev.chat_message.message_content.segment !== null &&
+	if (ev.chat_message.message_content.segment  &&
 		ev.self_event_state.user_id.gaia_id != ev.sender_id.gaia_id) {
 		chat.emit("message", ev, ev.chat_message.message_content.segment[0].text);
 	}

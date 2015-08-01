@@ -3,7 +3,7 @@ var request = require("request");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.timer (.+)/);
-	if (match !== null) {
+	if (match) {
 		var expr = match[1];
     var time = match[1] * 1000;
 		if (expr*1 == expr && expr < 18000) {

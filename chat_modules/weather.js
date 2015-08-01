@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.weather (.+)/);
-	if (match !== null) {
+	if (match ) {
 		client.startTyping(ev);
 		var zip = match[1];
 		request("http://www.wunderground.com/cgi-bin/findweather/getForecast?&query=" + zip, function(error, response, body) {

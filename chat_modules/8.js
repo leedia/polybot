@@ -33,7 +33,7 @@ String.prototype.hashCode = function() {
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.8 (.+)/);
-	if (match !== null) {
+	if (match ) {
 		client.startTyping(ev);
 		var question = (Math.abs(match[1].hashCode()) % 2 === 0);
 		var rand = Math.round(Math.random() * 5);

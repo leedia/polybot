@@ -15,7 +15,7 @@ var ascii = {
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.ascii (.+)/);
-	if (match !== null) {
+	if (match ) {
 		var art = match[1];
 		if(ascii[art] !== undefined) client.replyMessage(ev, ascii[art]);
 	}

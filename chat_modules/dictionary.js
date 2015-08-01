@@ -6,7 +6,7 @@ var cheerio = require("cheerio");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.dict (.+)/);
-	if (match !== null) {
+	if (match ) {
 		var word = match[1];
 		client.startTyping(ev);
 		request("https://www.oxforddictionaries.com/us/definition/american_english/" + encodeURI(word), function(error, response, body) {

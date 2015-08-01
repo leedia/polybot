@@ -29,7 +29,7 @@ String.prototype.hashCode = function() {
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/(https?:\/\/.*\.(?:png|jpe?g|gif(?!v)))/i);
-	if (match !== null) {
+	if (match ) {
 		client.startTyping(ev);
 		var hash = match[0].slice(0, -4).hashCode() + match[0].slice(-4);
 		download(match[0], "cache/" + hash, function() {

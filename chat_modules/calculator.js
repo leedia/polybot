@@ -4,7 +4,7 @@ var math = require("mathjs");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.c (.+)/);
-  if(match !== null){
+  if(match ){
     var expr = match[1];
     try {
       var ans = math.eval(expr);

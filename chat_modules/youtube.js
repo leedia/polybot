@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.yt (.+)/);
-	if (match !== null) {
+	if (match ) {
 		client.startTyping(ev);
 		var query = match[1];
 		request("https://www.youtube.com/results?search_query=" + query, function(error, response, body) {
