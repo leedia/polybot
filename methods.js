@@ -26,6 +26,10 @@ exports.replyImage = function(trig, path, fn) {
 	});
 };
 
+exports.readChat = function(ev){
+	client.setfocus(ev.conversation_id.id);
+};
+
 exports.leaveChat = function(ev) {
 	client.removeuser(ev.conversation_id.id);
 };
