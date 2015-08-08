@@ -37,11 +37,11 @@ client.chat.on("message", function(ev, msg) {
 			if (size < 20 * 1000000) {
 				client.replyImage(ev, "cache/" + hash, function() {
 					deleteFile("cache/" + hash);
+					client.stopTyping(ev);
 				});
 			} else {
 				deleteFile("cache/" + hash);
 			}
-			client.stopTyping(ev);
 		});
 	}
 });
