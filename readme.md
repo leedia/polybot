@@ -30,5 +30,6 @@ Command | Function
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
 `.topwords` | analyses up to 10,000 previous messages to generate a word count
+`*poly*` | any mention of poly will make it focus the current chat
 `.ref` | links to this page
 `.leave` | exits the (group) chat.
