@@ -21,7 +21,7 @@ Command | Function
 `.dict *` | an oxford dictionary definition for `*`
 `.ud *` | an urban dictionary definition for `*`
 `.ascii *` | show `*` ascii emote
-`.s *` | send a sticker matching `*` as the title
+`.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned.
 `.rainbow` | make the chat rainbow color
 `.celebration` | a party that simply cannot be stopped once started
 `.zalgo *` | responds with a zalgolized version of `*`
