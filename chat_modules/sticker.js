@@ -65,9 +65,9 @@ client.chat.on("message", function(ev, msg) {
 			}
 		});
 	}
-	else if(msg == ".s") {
-		client.replyMessage(ev, Object.keys(stickers.reduce(function(p, c){
+	else if (msg == ".s") {
+		client.replyMessage(ev, Object.keys(stickers).reduce(function(p, c){
 			return p + ", " + c;
-		})));
+		}));
 	}
 });
