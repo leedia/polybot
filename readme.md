@@ -18,7 +18,7 @@ Command | Function
 `.t *` | a phrase (`*`) google translated to english
 `.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
-`.dict *` | an oxford dictionary definition for `*`
+`.d *` | an oxford dictionary definition for `*`
 `.ud *` | an urban dictionary definition for `*`
 `.ascii *` | show `*` ascii emote
 `.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned.

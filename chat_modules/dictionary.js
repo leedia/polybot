@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/\.dict (.+)/);
+	var match = msg.match(/\.d (.+)/);
 	if (match ) {
 		var word = match[1];
 		client.startTyping(ev);
