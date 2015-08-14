@@ -10,7 +10,7 @@ client.chat.on("message", function(ev, msg) {
 			var link = "https://en.wikipedia.org/wiki/" + match[1];
 			var summary = res.query.pages[Object.keys(res.query.pages)[0]].extract;
 			var linkbuilder = new client.Client.MessageBuilder();
-			var segments = linkbuilder.link(summary, link).toSegments();
+			var segments = linkbuilder.text(summary).link(" [full]", link).toSegments();
 			if(summary) client.replySegments(ev, segments);
 			else client.replyMessage(ev, "no results found");
 			client.stopTyping(ev);
