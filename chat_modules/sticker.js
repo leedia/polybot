@@ -43,7 +43,8 @@ var stickers = {
 	"failfish": "https://static-cdn.jtvnw.net/emoticons/v1/360/1.0/index.jpg",
 	"oman": "http://www.operationworld.org/files/ow/maps/lgmap/oman-MMAP-md.png",
 	"yee": "http://i.imgur.com/cM9U1YX.jpg",
-	"raisin": "http://www.healthyandfitmagazine.com/wp/wp-content/uploads/40292-hi-LoveYourRaisins.jpg"
+	"raisin": "http://www.healthyandfitmagazine.com/wp/wp-content/uploads/40292-hi-LoveYourRaisins.jpg",
+	"gentoo": "https://sr.ht/b6f.jpg"
 };
 
 client.chat.on("message", function(ev, msg) {
