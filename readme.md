@@ -31,7 +31,7 @@ Command | Function
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
 `.topwords` | analyses up to 10,000 previous messages to generate a word count
 `.markov *` | generates a 10 word markov chain for the member having name `*`
-`.search *` | searches the chat in a 10,000 message backlog for the phrase and its context
+`.answer *` | answers in a markov chain from relevant text `*`
 `*poly*` | any mention of poly will make it focus the current chat
 `.ref` | links to this page
 `.leave` | exits the (group) chat.

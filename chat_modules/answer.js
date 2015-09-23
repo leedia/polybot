@@ -4,20 +4,20 @@ var markov = Markov(10);
 var lim = 10000;
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/\.search (.+)/);
+	var match = msg.match(/\.answer (.+)/);
 	if (match) {
 		client.startTyping(ev);
 		client.getHistory(ev, lim, function(ret) {
 			ret = ret.conversation_state.event.filter(function(evt) {
-				return (evt.chat_message && evt.chat_message.message_content.segment.length > 0);
+				return (evt.chat_message && evt.chat_message.message_content.segment.length > 0 && ev.self_event_state.user_id.chat_id != evt.sender_id.chat_id);
 			}).map(function(evt) {
 				return evt.chat_message.message_content.segment[0].text;
 			}).reduce(function(prev, cur) {
 				return prev + " " + cur;
 			});
 			markov.seed(ret, function() {
-				var k = markov.search(match[1]);
-				client.replyMessage(ev, markov.fill(k, 1)[0]);
+				var m = markov.respond(match[1]);
+				client.replyMessage(ev, m[0]);
 			});
 		});
 	}
