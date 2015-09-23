@@ -38,6 +38,12 @@ exports.getHistory = function(ev, length, fn) {
 	client.getconversation(ev.conversation_id.id, new Date(), length).then(fn);
 };
 
+exports.getMemberByName = function(name, fn){
+	client.searchentities(name, 5).then(function(entities){
+		fn(entities.entity[0].id.chat_id);
+	});
+};
+
 exports.renameChat = function(ev, name) {
 	client.renameconversation(ev.conversation_id.id, name);
 };

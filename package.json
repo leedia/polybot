@@ -15,6 +15,7 @@
   "dependencies": {
     "cheerio": "^0.19.0",
     "hangupsjs": "^0.9.1",
+    "markov": "0.0.7",
     "mathjs": "^1.7.0",
     "q": "^1.4.1",
     "request": "^2.58.0",
