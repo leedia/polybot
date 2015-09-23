@@ -1,4 +1,4 @@
-var client = require("../methods");
+/*var client = require("../methods");
 var Markov = require("markov");
 var markov = Markov(10);
 var lim = 10000;
@@ -21,4 +21,4 @@ client.chat.on("message", function(ev, msg) {
 			});
 		});
 	}
-});
+});*/
