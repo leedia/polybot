@@ -15,6 +15,7 @@ client.chat.on("message", function(ev, msg) {
 			}).reduce(function(prev, cur) {
 				return prev + " " + cur;
 			});
+			client.replyMessage(ev, "answering...");
 			markov.seed(ret, function() {
 				var m = markov.respond(match[1]);
 				client.replyMessage(ev, m[0]);
