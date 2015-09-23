@@ -6,7 +6,6 @@ var lim = 10000;
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.markov (.+)/);
 	if (match) {
-		client.replyMessage(ev, "Reading chat up to " + lim + " messages...");
 		client.getMemberByName(match[1], function(id) {
 			client.startTyping(ev);
 			client.getHistory(ev, lim, function(ret) {
