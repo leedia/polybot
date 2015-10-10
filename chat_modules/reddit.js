@@ -4,10 +4,10 @@ var cheerio = require("cheerio");
 
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/r\/(\S+)/);
-	if (match && !(match[1].match("http") && !match[1].match("reddit"))) {
+	var match = msg.match(/(^| |(https?:\/\/)?(www\.)?reddit\.com)\/?r\/(.+)( |$)/);
+	if (match) {
 		client.startTyping(ev);
-		var sub = match[1];
+		var sub = match[3];
 		request("https://reddit.com/r/" + sub, function(error, response, body) {
 			if (!error) {
 				var $ = cheerio.load(body);
