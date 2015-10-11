@@ -41,7 +41,7 @@ client.chat.on("message", function(ev, msg) {
 				var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
 				download(gif, "cache/" + hash, function() {
 					var size = fs.statSync("cache/" + hash).size;
-					if (size < 20 * 1000000) {
+					if (size < 40 * 1000000) {
 						client.replyImage(ev, "cache/" + hash, function() {
 							deleteFile("cache/" + hash);
 							client.stopTyping(ev);
