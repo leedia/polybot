@@ -1,9 +1,10 @@
 var client = require("../methods");
 var fs = require("fs");
 
-var emoticons = JSON.parse(fs.readFileSync("chat_modules/emoticons.json", "utf8"));
-var emotes = ["firework", "horn", "confetti"];
-var duration = 120;
+var config = require("../config");
+var emoticons = config.emoticons;
+var emotes = Object.keys(emoticons);
+var duration = config.celebration;
 
 client.chat.on("message", function(ev, msg) {
 	var match = msg.match(/\.celebration/);

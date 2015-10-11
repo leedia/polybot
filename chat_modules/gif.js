@@ -3,6 +3,9 @@ var request = require('request');
 
 var client = require("../methods");
 
+var config = require("../config");
+var giphy = require("giphy-api")(config.giphy);
+
 var download = function(uri, filename, callback) {
 	request.head(uri, function(err, res, body) {
 		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
@@ -27,30 +30,25 @@ String.prototype.hashCode = function() {
 	return hash;
 };
 
-var stickers = require("../config").stickers;
-
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/\.s (.+)/);
-	var sticker;
-	if(match) sticker = stickers[match[1].toLowerCase()];
-	if (match && sticker) {
+	var match = msg.match(/\.gif (.+)/);
+	if (match) {
 		client.startTyping(ev);
-		var hash = sticker.slice(0, -4).hashCode() + sticker.slice(-4);
-		download(sticker, "cache/" + hash, function() {
-			var size = fs.statSync("cache/" + hash).size;
-			if (size < 20 * 1000000) {
-				client.replyImage(ev, "cache/" + hash, function() {
+		giphy.search(match[1], function(err, res) {
+			var gif = "https://media.giphy.com/media/" + res.data[0].id + "/giphy.gif";
+			var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
+			download(gif, "cache/" + hash, function() {
+				var size = fs.statSync("cache/" + hash).size;
+				if (size < 20 * 1000000) {
+					client.replyImage(ev, "cache/" + hash, function() {
+						deleteFile("cache/" + hash);
+						client.stopTyping(ev);
+					});
+				} else {
 					deleteFile("cache/" + hash);
 					client.stopTyping(ev);
-				});
-			} else {
-				deleteFile("cache/" + hash);
-			}
+				}
+			});
 		});
-	}
-	else if (msg == ".s") {
-		client.replyMessage(ev, Object.keys(stickers).reduce(function(p, c){
-			return p + ", " + c;
-		}));
 	}
 });

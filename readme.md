@@ -21,14 +21,15 @@ Command | Function
 `.d *` | an oxford dictionary definition for `*`
 `.ud *` | an urban dictionary definition for `*`
 `.a *` | show `*` ascii emote
-`.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned.
+`.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned
+`.gif *` | searches giphy for a relevant gif pertaining to `*`, and sends it
 `.rainbow` | make the chat rainbow color
 `.celebration` | a party that simply cannot be stopped once started
 `.zalgo *` | responds with a zalgolized version of `*`
 `.8 *` | makes an 8 ball decision based on the `*` question
 `.rename *` | renames the current chat to `*`
-`.weather *` | a wunderground location `*` which can be either a zipcode or a location name.
-`.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`.
+`.weather *` | a wunderground location `*` which can be either a zipcode or a location name
+`.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`
 `.topwords` | analyses up to 10,000 previous messages to generate a word count
 `.markov *` | generates a 10 word markov chain for the member having name `*`
 `*poly*` | any mention of poly will make it focus the current chat
