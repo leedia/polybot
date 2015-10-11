@@ -36,7 +36,8 @@ client.chat.on("message", function(ev, msg) {
 		client.startTyping(ev);
 		giphy.search(match[1], function(err, res) {
 			if (res.data.length > 0 && !err) {
-				var gif = "https://media.giphy.com/media/" + res.data[Math.random() * res.data.length].id + "/giphy.gif";
+				var rand = Math.floor(Math.random() * res.data.length-1);
+				var gif = "https://media.giphy.com/media/" + res.data[rand].id + "/giphy.gif";
 				var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
 				download(gif, "cache/" + hash, function() {
 					var size = fs.statSync("cache/" + hash).size;
