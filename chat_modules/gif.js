@@ -35,20 +35,25 @@ client.chat.on("message", function(ev, msg) {
 	if (match) {
 		client.startTyping(ev);
 		giphy.search(match[1], function(err, res) {
-			var gif = "https://media.giphy.com/media/" + res.data[0].id + "/giphy.gif";
-			var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
-			download(gif, "cache/" + hash, function() {
-				var size = fs.statSync("cache/" + hash).size;
-				if (size < 20 * 1000000) {
-					client.replyImage(ev, "cache/" + hash, function() {
+			if (res.data.length > 0 && !err) {
+				var gif = "https://media.giphy.com/media/" + res.data[0].id + "/giphy.gif";
+				var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
+				download(gif, "cache/" + hash, function() {
+					var size = fs.statSync("cache/" + hash).size;
+					if (size < 20 * 1000000) {
+						client.replyImage(ev, "cache/" + hash, function() {
+							deleteFile("cache/" + hash);
+							client.stopTyping(ev);
+						});
+					} else {
 						deleteFile("cache/" + hash);
 						client.stopTyping(ev);
-					});
-				} else {
-					deleteFile("cache/" + hash);
-					client.stopTyping(ev);
-				}
-			});
+					}
+				});
+			}
+			else {
+				client.replyMessage(ev, "No relevant gifs found.");
+			}
 		});
 	}
 });
