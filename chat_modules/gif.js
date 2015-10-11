@@ -36,7 +36,7 @@ client.chat.on("message", function(ev, msg) {
 		client.startTyping(ev);
 		giphy.search(match[1], function(err, res) {
 			if (res.data.length > 0 && !err) {
-				var gif = "https://media.giphy.com/media/" + res.data[0].id + "/giphy.gif";
+				var gif = "https://media.giphy.com/media/" + res.data[Math.random() * res.data.length].id + "/giphy.gif";
 				var hash = gif.slice(0, -4).hashCode() + gif.slice(-4);
 				download(gif, "cache/" + hash, function() {
 					var size = fs.statSync("cache/" + hash).size;
@@ -50,8 +50,7 @@ client.chat.on("message", function(ev, msg) {
 						client.stopTyping(ev);
 					}
 				});
-			}
-			else {
+			} else {
 				client.replyMessage(ev, "No relevant gifs found.");
 				client.stopTyping(ev);
 			}
