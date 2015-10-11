@@ -53,6 +53,7 @@ client.chat.on("message", function(ev, msg) {
 			}
 			else {
 				client.replyMessage(ev, "No relevant gifs found.");
+				client.stopTyping(ev);
 			}
 		});
 	}
