@@ -2,12 +2,12 @@ var client = require("../methods");
 var fs = require("fs");
 
 var config = require("../config");
-var emoticons = config.celebration;
+var emoticons = config.halloween;
 var emotes = Object.keys(emoticons);
 var duration = config.celebrationdur;
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/\.celebration/);
+	var match = msg.match(/\.halloween/);
 	if (match ) {
 		var changeColor = function(i) {
 			client.eggChat(ev, "bikeshed");

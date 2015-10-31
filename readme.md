@@ -25,6 +25,7 @@ Command | Function
 `.gif *` | searches giphy for a random gif pertaining to `*`, and sends it
 `.rainbow` | make the chat rainbow color
 `.celebration` | a party that simply cannot be stopped once started
+`.halloween` | a halloween celebration.
 `.zalgo *` | responds with a zalgolized version of `*`
 `.8 *` | makes an 8 ball decision based on the `*` question
 `.rename *` | renames the current chat to `*`

@@ -1,10 +1,15 @@
 {
-	"celebration": "120",
 	"giphy": "dc6zaTOxFJmzC",
-	"emoticons": {
+	"celebrationdur": "120",
+	"celebration": {
 		"confetti": "🎊",
 		"horn": "🎉",
 		"firework": "🎆"
+	},
+	"halloween": {
+		"pumpkin": "🎃",
+		"horn": "👻",
+		"firework": "🕸"
 	},
 	"stickers": {
 		"gaben": "http://gabenislife.com/closeupgaben.jpg",
