@@ -1,6 +1,5 @@
 var client = require("../methods");
 var request = require("request");
-var cheerio = require("cheerio");
 
 var ascii = require("../config").ascii;
 
