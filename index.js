@@ -7,7 +7,7 @@ var client = new Client();
 exports.client = client;
 exports.Client = Client;
 var chat = new events.EventEmitter();
-chat.setMaxListeners(25);
+chat.setMaxListeners(30);
 exports.chat = chat;
 
 fs.readdirSync(__dirname + "/chat_modules").forEach(function(file, index, arr) {
