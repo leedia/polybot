@@ -15,7 +15,7 @@ Command | Function
 *(`tweet` link)* | an inline tweet including username and tweet text
 *(`/r/*` or `r/*`)* | a link to `*` subreddit and a description
 *twitch emote* | responds with `*` emote from twitch.tv
-*twitch.tv/\** | 
+*twitch.tv/** | 
 `.yt *` | a youtube link from the `*` search query
 `.t *` | a phrase (`*`) google translated to english
 `.c *` | a [mathjs](http://mathjs.org/) compatible `*` expression
