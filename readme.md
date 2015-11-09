@@ -4,6 +4,8 @@
 
 a work-in-progress hangouts bot written with [hangupsjs](https://github.com/tdryer/hangups), with a focus on variety of modules and ease of use.
 
+It's primarily focused on groupchat-related functionality.
+
 You can try its hosted demo on [google+](https://plus.google.com/114969566275981000493/about).
 
 Uses `chat_modules` to interact with an abstraction of the hangupsjs api. Events are sent from an eventemitter in `index.js`.
