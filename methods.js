@@ -2,26 +2,48 @@ var client = require("./index").client;
 var Client = require("./index").Client;
 exports.chat = require("./index").chat;
 
-exports.replyMessage = function(trig, body) {
+//statistics
+var storage = require("node-persist");
+storage.initSync();
+var stats = storage.getItem("stats");
+if (!stats) {
+	stats = {created: new Date(), messages: 0, images: 0};
+}
+var addStat = function(typ){
+	stats[typ]++;
+	storage.setItem("stats", stats);
+};
+
+exports.getStats = function(){
+	return storage.getItem("stats");
+};
+
+exports.replyMessage = function(trig, body, insig) { //insig being "insignificant" (not counting toward stats)
 	client.sendchatmessage(trig.conversation_id.id, [
 		[0, body]
-	]).then(function() {});
+	]).then(function() {
+		if(!insig) addStat("messages");
+	});
 };
 
 exports.replySegments = function(trig, segments) {
-	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {});
+	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
+		addStat("messages");
+	});
 };
 
 exports.replyLink = function(trig, link) {
 	var linkbuilder = new Client.MessageBuilder();
 	var segments = linkbuilder.link(link, link).toSegments();
 	client.sendchatmessage(trig.conversation_id.id, segments);
+	addStat("messages");
 };
 
 exports.replyImage = function(trig, path, fn) {
 	client.uploadimage(path).then(function(id) {
 		client.sendchatmessage(trig.conversation_id.id, [], id).then(function() {
 			fn();
+			addStat("images");
 		});
 	});
 };
