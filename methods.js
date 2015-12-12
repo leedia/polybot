@@ -28,9 +28,7 @@ exports.replyMessage = function(trig, body, insig) { //insig being "insignifican
 };
 
 exports.replySegments = function(trig, segments) {
-	console.log(segments);
 	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
-		console.log("done");
 		addStat("messages");
 	});
 };
