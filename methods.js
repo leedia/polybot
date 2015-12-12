@@ -8,6 +8,7 @@ storage.initSync();
 var stats = storage.getItem("stats");
 if (!stats) {
 	stats = {created: new Date(), messages: 0, images: 0};
+	storage.setItem("stats", stats);
 }
 var addStat = function(typ){
 	stats[typ]++;
@@ -27,7 +28,9 @@ exports.replyMessage = function(trig, body, insig) { //insig being "insignifican
 };
 
 exports.replySegments = function(trig, segments) {
+	console.log(segments);
 	client.sendchatmessage(trig.conversation_id.id, segments).then(function() {
+		console.log("done");
 		addStat("messages");
 	});
 };

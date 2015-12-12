@@ -31,7 +31,7 @@ client.chat.on("message", function(ev, msg) {
 			if (top > keys.length) top = keys.length;
 			var builder = new client.Client.MessageBuilder();
 			var segments = builder;
-			segments.italic("Top words out of " + lim + " messages:").toSegments();
+			segments.italic("Top words out of " + lim + " messages:");
 			for (var i = 0; i < top; i++) {
 				segments.linebreak();
 				segments.underline(keys[i].word);
@@ -39,7 +39,7 @@ client.chat.on("message", function(ev, msg) {
 				segments.bold(keys[i].count.toString());
 			}
 			segments.toSegments();
-			client.replySegments(ev, segments.segments);
+			client.replySegments(ev, segments);
 			client.stopTyping(ev);
 		});
 	}

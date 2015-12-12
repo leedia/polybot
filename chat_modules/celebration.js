@@ -16,7 +16,7 @@ client.chat.on("message", function(ev, msg) {
 			}, 200);
 		};
 		var sendEmotes = function(i, e) {
-			client.replyMessage(ev, emoticons[emotes[e]] + emoticons[emotes[e]] + emoticons[emotes[e]] + emoticons[emotes[e]]);
+			client.replyMessage(ev, emoticons[emotes[e]] + emoticons[emotes[e]] + emoticons[emotes[e]] + emoticons[emotes[e]], true);
 			setTimeout(function() {
 				if(e == emotes.length - 1) e = -1;
 				if (i < duration/2) sendEmotes(i + 1, e + 1);
