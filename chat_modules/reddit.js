@@ -4,7 +4,7 @@ var cheerio = require("cheerio");
 
 
 client.chat.on("message", function(ev, msg) {
-	var match = msg.match(/(^| |(https?:\/\/)?(www\.)?reddit\.com)\/?r\/(\w+)( |$)/);
+	var match = msg.match(/(^| |(https?:\/\/)?(www\.)?reddit\.com)\/?r\/(\S+)( |$)/);
 	if (match) {
 		client.startTyping(ev);
 		var sub = match[4];
