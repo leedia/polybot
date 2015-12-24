@@ -7,7 +7,7 @@ client.chat.on("message", function(ev, msg) {
 		client.startTyping(ev);
 		client.getHistory(ev, lim, function(ret) {
 			var words = {};
-			ret.conversation_state.event.forEach(function(evt, ind) {
+			ret.conversation_state.event.forEach(function(evt) {
 				if (evt.chat_message && evt.chat_message.message_content.segment.length > 0 &&
 				ev.self_event_state.user_id.gaia_id != evt.sender_id.gaia_id) {
 					var message = evt.chat_message.message_content.segment[0].text.split(" ");
