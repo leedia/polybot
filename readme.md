@@ -24,7 +24,7 @@ Command | Function
 `.wiki *` | a fuzzy case sensitive `*` title of a wikipedia article
 `.d *` | an oxford dictionary definition for `*`
 `.ud *` | an urban dictionary definition for `*`
-`.a *` | show `*` ascii emote
+`.ascii *` | show `*` ascii emote
 `.p *` | respond with `*` copypasta
 `.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned
 `.gif *` | searches giphy for a random gif pertaining to `*`, and sends it
