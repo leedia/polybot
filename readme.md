@@ -37,6 +37,7 @@ Command | Function
 `.weather *` | a wunderground location `*` which can be either a zipcode or a location name
 `.timer *` | a timer which counts down `*` seconds and then notifies when reaching `0`
 `.topwords` | analyses up to 10,000 previous messages to generate a word count
+`.stats` | gives statistics for poly bot
 `.markov *` | generates a 10 word markov chain for the member having name `*`
 `*poly*` | any mention of poly will make it focus the current chat
 `.ref` | links to this page
